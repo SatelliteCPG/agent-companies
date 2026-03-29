@@ -1,0 +1,107 @@
+runtime: paperclip
+version: 1
+defaults:
+  model: claude-sonnet-4-20250514
+  concurrency: 3
+  approval: manual
+
+agents:
+  # Leadership — frontier models for judgment
+  ceo:
+    model: claude-opus-4-20250514
+    budget: 50.00
+    approval: manual
+  cto:
+    model: claude-opus-4-20250514
+    budget: 30.00
+    approval: manual
+
+  # VPs — sonnet for depth
+  vp-compound:
+    model: claude-opus-4-20250514
+    budget: 30.00
+    approval: manual
+  vp-engineering:
+    model: claude-sonnet-4-20250514
+    budget: 40.00
+    approval: auto
+  vp-quality:
+    model: claude-sonnet-4-20250514
+    budget: 30.00
+    approval: auto
+
+  # Leads — sonnet
+  platform-lead:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+  frontend-lead:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+  ai-lead:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+  data-lead:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  crm-lead:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+
+  # Engineers — sonnet for depth work
+  api-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  prisma-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  vue-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  mobile-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  design-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  sally-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  eval-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  scorecard-engineer:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Volume/Cost — OpenRouter
+  etl-engineer:
+    model: anthropic/claude-sonnet-4-20250514
+    budget: 10.00
+    approval: auto
+    input:
+      OPENROUTER_API_KEY:
+        type: secret
+        required: true
+
+  # Quality & Compound — sonnet
+  review-orchestrator:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  knowledge-librarian:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
