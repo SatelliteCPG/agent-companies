@@ -1,6 +1,6 @@
 ---
 name: Brand Co
-description: CPG brand sales team using Satellite to manage retail sell-in pipeline, distributor relationships, and broker coordination. Reference company — Just Egg.
+description: Agent company for CPG brands. Run your entire brand operation — sales, marketing, distribution, finance, and analytics — with AI agents connected to Satellite's MCP tools.
 slug: brand-co
 schema: agentcompanies/v1
 version: 1.0.0
@@ -10,47 +10,41 @@ authors:
 tags:
   - cpg
   - brand
+  - agent-native
   - sales
-  - retail-sell-in
-  - pipeline-management
+  - trade-marketing
+  - distribution
 metadata:
   sources:
     - kind: github-dir
-      repo: iamfiscus/agent-companies
+      repo: SatelliteCPG/agent-companies
       path: brand-co
       commit: main
-      url: https://github.com/iamfiscus/agent-companies/tree/main/brand-co
+      url: https://github.com/SatelliteCPG/agent-companies/tree/main/brand-co
 ---
 
 # Brand Co
 
-Agent-company package for a CPG brand sales team running on Satellite. Models how a brand like Just Egg uses Sally and the Satellite MCP tool suite to manage its retail sales pipeline — from email triage through buyer meetings, pipeline reviews, and distribution gap analysis.
+Agent company for running the entire operation of a CPG brand like Just Egg. A CPG brand sells products into retailers through distributors and brokers. That means managing a retail sell-in pipeline, coordinating broker networks (Greenseed, Acosta), tracking distribution coverage across UNFI and KeHE DCs, planning and measuring trade promotions (TPRs, MCBs, off-invoice deals), analyzing SPINS and retailer POS data, recovering deductions, and building brand awareness through sellsheets, category reviews, and content. This agent company covers all of it — sales, marketing, operations, finance, and analytics — with 14 agents organized into the same functional teams a real brand runs.
 
 ## Operating Principles
 
-### Sales-First Architecture
+### Sales Pipeline Management
 
-- **Pipeline is truth:** Every retailer interaction flows through the opportunity pipeline. Email triage creates opportunities, buyer meetings advance them, pipeline reviews identify stalls.
-- **CRM capture at the edge:** Emails, meetings, and broker reports are processed into structured CRM data as they arrive — not batched at end-of-week.
-- **Distribution drives strategy:** Distributor authorization data (DCs, product families, codes) determines where sell-in effort is focused. No point pitching a retailer if the DC is not set up.
-- **Broker accountability:** Broker partners are tracked through meetings held, opportunities advanced, and territory coverage gaps — not just relationship warmth.
+Every retailer relationship flows through a structured pipeline — from initial outreach to authorization to reorder. Buyer meetings are prepped with current SPINS data, distribution status, and account history. Pipeline velocity and stall points are tracked weekly. No opportunity goes dark without escalation.
 
-### The Compound Loop (Brand Sales)
+### Distribution Coverage
 
-All work flows through four phases:
+Distribution is the prerequisite to sales. Before pitching a retailer, confirm the DC is set up, item codes are active, and fill rates are healthy. Track authorization at the DC level across UNFI, KeHE, and regional distributors. New item onboarding is managed as a project, not an afterthought.
 
-1. **Plan** — Review pipeline health, identify distribution gaps, prioritize retailers for the week. Use `get_pipeline_metrics`, `search_opportunities`, `list_account_families`.
-2. **Execute** — Run email triage, prepare buyer meeting briefs, process sample requests, update opportunity stages. Use `process_email_thread`, `search_accounts`, `create_meeting`, `update_opportunity`.
-3. **Review** — Weekly pipeline review, broker coordination check, distributor status verification. Use `pipeline-review` prompt, `get_distributor_families`, `list_meetings`.
-4. **Compound** — Capture what worked: which talking points landed, which retailers responded to which pitch angles, which broker tactics moved deals. Feed learnings into next week's plan.
+### Trade Marketing
 
-Learnings feed back into the next Plan cycle. This is how the sales team compounds institutional knowledge instead of losing it to turnover.
+Trade spend is the largest controllable cost for a CPG brand. Every promotion — TPR, MCB, scan deal, off-invoice — has a planned cost and an expected lift. Measure incremental volume vs baseline. Track planned vs actual spend by account. Coordinate promotions with distributor and retailer calendars.
 
-### Default Rules
+### Financial Discipline
 
-- No buyer meeting happens without a meeting brief prepared via `buyer-meeting-prep`
-- No email goes unprocessed — every inbound thread gets triaged through `email-to-crm-upsert`
-- Pipeline review happens weekly without exception
-- Distributor authorization is verified before any new sell-in push
-- Broker performance is reviewed weekly with quantifiable metrics
-- All opportunity stage changes require a note explaining why
+The P&L is the scoreboard. Track gross margin, COGS, and trade spend by channel and retailer. Manage deductions aggressively — dispute invalid charges, recover short-pays, reconcile credits. Report on EBITDA weekly, not quarterly. Every dollar of trade spend should have a measurable return.
+
+### Data-Driven Decisions
+
+SPINS data, retailer POS, distributor shipment reports, and internal CRM data are the inputs. Category insights drive sell-in stories. Competitive analysis identifies white space. Scorecards track velocity, distribution, and promotion effectiveness by account. Decisions are made on data, not intuition.

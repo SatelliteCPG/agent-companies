@@ -1,12 +1,15 @@
 ---
 name: Analytics
-description: Data and reporting team — pipeline metrics, distribution intelligence, broker scorecards, and sales performance analysis. Turns raw CRM data into weekly decision-making inputs.
+description: Cross-functional analytics — data infrastructure, SPINS analysis, P&L scorecards, and competitive intelligence. Agents are shared with their primary teams.
 slug: analytics
 manager: ../../agents/data-analyst/AGENTS.md
 includes:
   - ../../agents/data-analyst/AGENTS.md
+  - ../../agents/category-insights-analyst/AGENTS.md
+  - ../../skills/pipeline-health-check/SKILL.md
+  - ../../skills/account-deep-dive/SKILL.md
 ---
 
 # Analytics
 
-The analytics team owns data interpretation and reporting for the brand's sales operation. The Data Analyst pulls pipeline metrics, builds distribution coverage maps, and prepares the weekly report package that drives the Sales Director's planning cycle.
+Cross-functional analytics team owning data infrastructure, SPINS analysis, P&L scorecards, and competitive intelligence. Agents are shared with their primary teams (finance, sales).

@@ -1,6 +1,6 @@
 # Brand Co
 
-Agent Companies package for a CPG brand sales team — models how a company like Just Egg uses Satellite to manage retail sell-in, distributor relationships, and broker coordination through Sally AI.
+Agent Companies package for a CPG brand — models how a company like Just Egg runs its entire operation through AI agents connected to Satellite's MCP tools. Covers sales, marketing, distribution, finance, and analytics.
 
 Built for [Paperclip](https://paperclipai.com) using the [Agent Companies](https://github.com/anthropics/agent-companies) protocol.
 
@@ -13,53 +13,63 @@ npx paperclipai company import ./company/
 ## Org Chart
 
 ```
-Sales Director
-├── Sales Coordinator (Sally's brand-facing persona)
-├── Trade Marketing Analyst
-├── Distributor Liaison
-└── Data Analyst
+CEO (Brand Founder/GM)
+├── VP Sales
+│   ├── Sales Coordinator (daily CRM ops, email triage)
+│   ├── Broker Manager (Greenseed, Acosta coordination)
+│   └── Category Insights Analyst (SPINS data, competitive analysis)
+├── VP Marketing
+│   ├── Trade Marketing Manager (TPRs, MCBs, promotions)
+│   └── Brand Manager (brand story, content, sellsheets)
+├── VP Operations
+│   ├── Distribution Manager (UNFI/KeHE DC coverage, codes)
+│   └── Demand Planner (inventory, forecasting, fill rates)
+└── VP Finance
+    ├── Deduction Analyst (dispute, recover, reconcile)
+    └── Data Analyst (P&L, scorecards, trade spend ROI)
 ```
 
-## The Compound Loop (Brand Sales)
+## Operating Principles
 
-Every week flows through the brand sales compound loop:
-
-| Phase | Owner | What Happens |
-|---|---|---|
-| **Plan** | Sales Director | Review pipeline health, identify distribution gaps, prioritize retailers and broker follow-ups for the week. |
-| **Execute** | Sales Coordinator | Triage emails to CRM, prepare buyer meeting briefs, process sample requests, update opportunity stages. |
-| **Review** | Sales Director + Data Analyst | Weekly pipeline review, broker performance check, distributor authorization verification. |
-| **Compound** | Sales Director | Capture what worked — which pitches landed, which retailers responded, which broker tactics moved deals. Feed into next week's plan. |
-
-## MCP Tool Surface
-
-The brand team relies on Sally's 35 MCP tools. Core tools by workflow:
-
-| Workflow | Key MCP Tools |
+| Principle | What It Means |
 |---|---|
-| Email Triage | `process_email_thread`, `create_contact`, `create_meeting`, `create_opportunity`, `update_opportunity` |
-| Buyer Meeting Prep | `search_accounts`, `get_company`, `search_contacts`, `search_opportunities`, `get_sellsheet`, `get_upcoming` |
-| Pipeline Review | `get_pipeline_metrics`, `search_opportunities`, `list_account_families` |
-| Distributor Check | `get_distributor_codes`, `get_distributor_families`, `list_distributors`, `search_distribution_centers` |
-| Broker Coordination | `get_company`, `search_contacts`, `list_meetings`, `search_opportunities` |
+| **Sales Pipeline Management** | Every retailer interaction flows through a structured pipeline. Buyer meetings prepped with current data. Pipeline velocity tracked weekly. |
+| **Distribution Coverage** | DC-level authorization tracked across UNFI, KeHE, and regionals. Distribution confirmed before sell-in effort. |
+| **Trade Marketing** | Every promotion has planned cost and expected lift. Incremental volume measured vs baseline. Planned vs actual spend tracked by account. |
+| **Financial Discipline** | P&L tracked by channel and retailer. Deductions disputed and recovered. Trade spend ROI measured on every dollar. |
+| **Data-Driven Decisions** | SPINS, POS, distributor shipments, and CRM data drive all decisions. Category insights power sell-in stories. |
 
 ## Package Contents
 
 | Type | Count |
 |---|---|
 | Company | 1 |
-| Teams | 2 |
-| Agents | 5 |
-| Projects | 2 |
-| Tasks | 3 |
-| Skills | 0 (shipped separately in Unit 5) |
+| Teams | 6 |
+| Agents | 14 |
+| Projects | 4 |
+| Tasks | 8 |
+| Skills | 5 |
 
 ## Model Strategy
 
-| Tier | Model | Use Case |
-|---|---|---|
-| Frontier | Claude Opus | Sales Director — strategic pipeline decisions, weekly planning, broker accountability |
-| Standard | Claude Sonnet | All other agents — email triage, meeting prep, data analysis, distributor checks |
+| Tier | Model | Agents | Use Case |
+|---|---|---|---|
+| Frontier | Claude Opus | CEO | Strategic planning, cross-functional coordination, weekly business review |
+| Standard | Claude Sonnet | VP Sales, VP Marketing, VP Operations, VP Finance | Functional leadership, team coordination, initiative ownership |
+| Standard | Claude Sonnet | Sales Coordinator, Broker Manager, Category Insights Analyst | Daily CRM ops, broker coordination, SPINS analysis |
+| Standard | Claude Sonnet | Trade Marketing Manager, Brand Manager | Promotion planning, brand content, sellsheets |
+| Standard | Claude Sonnet | Distribution Manager, Demand Planner | DC coverage tracking, inventory forecasting |
+| Standard | Claude Sonnet | Deduction Analyst, Data Analyst | Deduction recovery, P&L reporting, scorecards |
+
+## Skills
+
+| Skill | Description |
+|---|---|
+| `buyer-meeting-brief` | Prepare a buyer meeting brief with account history, SPINS data, distribution status, and talking points. |
+| `pipeline-health-check` | Review pipeline velocity, stall points, and stage distribution across all active opportunities. |
+| `account-deep-dive` | Pull full account profile — contacts, opportunities, distribution, promotions, and SPINS performance. |
+| `email-triage` | Process inbound email threads into CRM records — contacts, meetings, opportunities, and tasks. |
+| `distributor-status-report` | Report on DC-level authorization, fill rates, item codes, and onboarding status across distributors. |
 
 ## Recurring Tasks
 
@@ -67,11 +77,16 @@ The brand team relies on Sally's 35 MCP tools. Core tools by workflow:
 |---|---|---|
 | Daily Email Triage | Sales Coordinator | Daily 8:00 AM CT |
 | Daily Pipeline Check | Sales Coordinator | Daily 9:00 AM CT |
-| Weekly Distributor Review | Distributor Liaison | Monday 10:00 AM CT |
+| Weekly Pipeline Review | VP Sales | Monday 10:00 AM CT |
+| Weekly Distributor Status | Distribution Manager | Monday 11:00 AM CT |
+| Weekly Trade Spend Review | VP Finance | Tuesday 9:00 AM CT |
+| Weekly SPINS Analysis | Category Insights Analyst | Wednesday 9:00 AM CT |
+| Weekly Deduction Aging Report | Deduction Analyst | Thursday 9:00 AM CT |
+| Weekly Business Review | CEO | Friday 10:00 AM CT |
 
 ## Protocol
 
-This package follows the [Agent Companies v1](https://github.com/anthropics/agent-companies) specification. Skills are shipped as separate packages (see Unit 5 — brand-specific SKILL.md files). The company structure is importable via the Paperclip CLI.
+This package follows the [Agent Companies v1](https://github.com/anthropics/agent-companies) specification. All agent files use YAML frontmatter with `name`, `title`, `description`, `slug`, `reportsTo`, and `skills`. The company structure is importable via the Paperclip CLI.
 
 ## License
 

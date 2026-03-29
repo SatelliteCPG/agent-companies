@@ -1,15 +1,19 @@
 ---
 name: Sales
-description: Core sales execution team — email triage, buyer meetings, pipeline management, sample processing, and broker coordination. Handles all day-to-day CRM operations and retail sell-in execution.
+description: Pipeline management, retailer relationships, broker coordination, and category insights.
 slug: sales
-manager: ../../agents/sales-director/AGENTS.md
+manager: ../../agents/vp-sales/AGENTS.md
 includes:
-  - ../../agents/sales-director/AGENTS.md
+  - ../../agents/vp-sales/AGENTS.md
   - ../../agents/sales-coordinator/AGENTS.md
-  - ../../agents/trade-marketing-analyst/AGENTS.md
-  - ../../agents/distributor-liaison/AGENTS.md
+  - ../../agents/broker-manager/AGENTS.md
+  - ../../agents/category-insights-analyst/AGENTS.md
+  - ../../skills/email-triage/SKILL.md
+  - ../../skills/buyer-meeting-brief/SKILL.md
+  - ../../skills/pipeline-health-check/SKILL.md
+  - ../../skills/account-deep-dive/SKILL.md
 ---
 
 # Sales
 
-The sales team owns retail sell-in execution. The Sales Director sets weekly priorities, the Sales Coordinator handles daily CRM operations (email triage, meeting prep, sample requests), the Trade Marketing Analyst manages promotional alignment, and the Distributor Liaison ensures DC authorization supports the pipeline.
+The sales team owns the pipeline, retailer relationships, broker coordination, and category insights. Drives new authorizations and revenue growth across all retail channels.
