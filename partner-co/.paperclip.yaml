@@ -1,0 +1,67 @@
+runtime: paperclip
+version: 1
+defaults:
+  model: claude-sonnet-4-20250514
+  concurrency: 3
+  approval: manual
+
+agents:
+  # Leadership — frontier model for judgment
+  managing-partner:
+    model: claude-opus-4-20250514
+    budget: 50.00
+    approval: manual
+
+  # VPs — sonnet for depth
+  vp-sales:
+    model: claude-sonnet-4-20250514
+    budget: 30.00
+    approval: auto
+  vp-client-services:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+  director-operations:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+
+  # Sales team
+  territory-manager:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  broker-sales-rep:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  void-specialist:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Client services team
+  brand-onboarding-manager:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  brand-performance-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Operations team
+  deduction-recovery-specialist:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  category-review-coordinator:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Cross-functional
+  data-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto

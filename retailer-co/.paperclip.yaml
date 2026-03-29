@@ -1,0 +1,67 @@
+runtime: paperclip
+version: 1
+defaults:
+  model: claude-sonnet-4-20250514
+  concurrency: 3
+  approval: manual
+
+agents:
+  # Leadership — frontier model for judgment
+  vp-merchandising:
+    model: claude-opus-4-20250514
+    budget: 50.00
+    approval: manual
+
+  # Directors — sonnet for depth
+  director-category-management:
+    model: claude-sonnet-4-20250514
+    budget: 30.00
+    approval: auto
+  director-vendor-relations:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+  director-merchandising-promotions:
+    model: claude-sonnet-4-20250514
+    budget: 25.00
+    approval: auto
+
+  # Category management team
+  category-manager-grocery:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  category-manager-natural-specialty:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  category-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Vendor relations team
+  new-item-evaluator:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  vendor-compliance-manager:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Merchandising team
+  promotional-planner:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  space-planning-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Cross-functional
+  data-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto

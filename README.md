@@ -8,12 +8,9 @@
 |---------|-------------|--------|
 | [satellite-cpg-co](./satellite-cpg-co/) | Agent Native B2B SaaS platform for CPG sales teams | `npx paperclipai company import satellite-cpg-co/` |
 | [brand-co](./brand-co/) | CPG brand operations — sales, marketing, distribution, finance (14 agents, 5 skills) | `npx paperclipai company import brand-co/` |
-
-## Planned
-
-- **partner-co** — CPG brokers/partners (multi-brand representation, void closure, deduction recovery)
-- **retailer-co** — Retailers (category management, vendor evaluation, planogram)
-- **distributor-co** — Distributors (warehouse ops, supplier onboarding, DC allocation)
+| [partner-co](./partner-co/) | CPG broker/partner — multi-brand representation, void closure, deduction recovery (12 agents, 5 skills) | `npx paperclipai company import partner-co/` |
+| [retailer-co](./retailer-co/) | CPG retailer — category management, vendor evaluation, promotions (12 agents, 4 skills) | `npx paperclipai company import retailer-co/` |
+| [distributor-co](./distributor-co/) | CPG distributor — supply chain, supplier onboarding, DC allocation (15 agents, 4 skills) | `npx paperclipai company import distributor-co/` |
 
 ## Quick Start
 
