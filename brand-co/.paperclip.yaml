@@ -1,0 +1,33 @@
+runtime: paperclip
+version: 1
+defaults:
+  model: claude-sonnet-4-20250514
+  concurrency: 2
+  approval: manual
+
+agents:
+  # Sales Director — frontier model for strategic judgment
+  sales-director:
+    model: claude-opus-4-20250514
+    budget: 30.00
+    approval: manual
+
+  # Sales team — sonnet for day-to-day execution
+  sales-coordinator:
+    model: claude-sonnet-4-20250514
+    budget: 20.00
+    approval: auto
+  trade-marketing-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+  distributor-liaison:
+    model: claude-sonnet-4-20250514
+    budget: 15.00
+    approval: auto
+
+  # Analytics — sonnet
+  data-analyst:
+    model: claude-sonnet-4-20250514
+    budget: 10.00
+    approval: auto
